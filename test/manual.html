@@ -16,10 +16,15 @@
       console.log(TextSplit)
 
       // should split by letter
-      TextSplit(document.querySelector('.one'))
+      TextSplit(document.querySelector('.one'), {
+        each: (node, index) => console.log(node, index)
+      })
 
       // should split by word
-      TextSplit(document.querySelector('.two'), { delimeter: 'word' })
+      TextSplit(document.querySelector('.two'), {
+        delimeter: 'word',
+        each: (node, index) => console.log(node, index)
+      })
     </script>
   </body>
 </html>
