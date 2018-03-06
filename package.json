@@ -1,20 +1,20 @@
 {
   "name":        "text-split",
-  "description": "",
+  "description": "Text wrapping for type animations.",
 
   "main":        "dist/text-split.js",
   "module":      "dist/text-split.module.js",
   "jsnext:main": "dist/text-split.module.js",
 
   "version": "0.0.1",
-  "license": "",
+  "license": "MIT",
 
-  "repository": "",
+  "repository": "callmecavs/text-split",
 
   "author": {
-    "name":  "",
-    "email": "",
-    "url":   ""
+    "name":  "Michael Cavalea",
+    "email": "callmecavs@gmail.com",
+    "url":   "http://callmecavs.com/"
   },
 
   "scripts": {
