@@ -45,6 +45,30 @@ describe('text-split', () => {
     expect(test.outerHTML).to.equal(expected)
   })
 
+  it('"a11y" option', () => {
+    const test = document.createElement('p')
+    test.textContent = 'Split text.'
+    split(test, { a11y: false })
+
+    const expected = [
+      '<p>',
+      '<span>S</span>',
+      '<span>p</span>',
+      '<span>l</span>',
+      '<span>i</span>',
+      '<span>t</span>',
+      '<span> </span>',
+      '<span>t</span>',
+      '<span>e</span>',
+      '<span>x</span>',
+      '<span>t</span>',
+      '<span>.</span>',
+      '</p>'
+    ].join('')
+
+    expect(test.outerHTML).to.equal(expected)
+  })
+
   it('"element" option', () => {
     const test = document.createElement('div')
     test.textContent = 'Split text.'
