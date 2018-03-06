@@ -6,11 +6,14 @@ const separators = {
 const split = (node, {
   // default options
   a11y = false,
-  delimeter = separators.letter,
+  delimeter = 'letter',
   element = 'span',
   each = () => {}
 } = {}) => {
+  // split text based on delimeter
+  const text = node.textContent.split(separators[delimeter])
 
+  console.log(text)
 }
 
 export default split
