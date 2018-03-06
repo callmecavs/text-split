@@ -65,8 +65,20 @@ splitter(target, { delimeter: 'word' })
 
 ### each
 
-```javascript
+A function, if it exists, that is called and passed:
 
+* the created node, with set `textContent`
+* the 0-based node index (relative to other created nodes)
+* the [DocumentFragment](https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment) that stores the nodes created (thus far)
+
+This is the ~~fun part~~ escape hatch.
+
+```javascript
+splitter(target, {
+  each: (node, index, frag) => {
+    node.classList.add(`number-${index}`)
+  }
+})
 ```
 
 ### element
