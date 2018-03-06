@@ -28,7 +28,7 @@ const config = {
     {
       file: info.main,
       format: 'umd',
-      name: 'text-split'
+      name: 'TextSplit'
     }, {
       file: info.module,
       format: 'es'

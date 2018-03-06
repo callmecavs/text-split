@@ -1,5 +1,5 @@
-const text-split = () => {
+const split = () => {
 
 }
 
-export default text-split
+export default split
