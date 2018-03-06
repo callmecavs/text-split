@@ -7,10 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
+    <p class="one">This is the first sentence.</p>
+    <p class="two">This is the second sentence.</p>
+
     <script src="../dist/text-split.js"></script>
     <script>
-      console.log('Module assigned to window.text-split. Logged below:')
-      console.log(text-split)
+      console.log('Module assigned to window.TextSplit. Logged below:')
+      console.log(TextSplit)
+
+      // should split by letter
+      TextSplit(document.querySelector('.one'))
+
+      // should split by word
+      TextSplit(document.querySelector('.two'), { delimeter: 'word' })
     </script>
   </body>
 </html>
