@@ -83,8 +83,10 @@ splitter(target, {
 
 ### element
 
-```javascript
+A tag name that is used to [create the wrapper element](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement) for each piece of the text after it is split using the `delimeter`.
 
+```javascript
+const divs = splitter(target, { element: 'div' })
 ```
 
 ## License
