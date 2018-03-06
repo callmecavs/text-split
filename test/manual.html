@@ -10,6 +10,9 @@
     <p class="one">This is the first sentence.</p>
     <p class="two">This is the second sentence.</p>
 
+    <div class="three"></div>
+    <div class="four"></div>
+
     <script src="../dist/text-split.js"></script>
     <script>
       console.log('Module assigned to window.TextSplit. Logged below:')
@@ -17,14 +20,20 @@
 
       // should split by letter
       TextSplit(document.querySelector('.one'), {
-        each: (node, index) => console.log(node, index)
+        each: (node, index) => node.className += 'one-piece'
       })
 
       // should split by word
       TextSplit(document.querySelector('.two'), {
         delimeter: 'word',
-        each: (node, index) => console.log(node, index)
+        each: (node, index) => node.className += `number-${ index }`
       })
+
+      // should error (children)
+      // TextSplit(document.querySelector('.three'))
+
+      // should error (no text)
+      // TextSplit(document.querySelector('.four'))
     </script>
   </body>
 </html>

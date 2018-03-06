@@ -10,6 +10,13 @@ const split = (target, {
   element = 'span',
   each = null
 } = {}) => {
+  // ensure just text content, no children nodes
+  const mustard = !target.children.length && target.textContent
+
+  if (!mustard) {
+    throw new Error('text-split: target must have text content, and no children.')
+  }
+
   // split text based on delimeter
   const text = target
     .textContent
