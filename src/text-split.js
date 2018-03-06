@@ -7,8 +7,8 @@ const split = (target, {
   // default options
   a11y = true,
   delimeter = 'letter',
-  element = 'span',
-  each = null
+  each = null,
+  element = 'span'
 } = {}) => {
   // ensure just text content, no children nodes
   const mustard = !target.children.length && target.textContent
