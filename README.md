@@ -19,7 +19,7 @@ To address some prior art:
 
 With only 1 method and 4 options, `text-split` offers the most control via the smallest API surface area.
 
-## Use
+## Getting Started
 
 ```javascript
 import splitter from 'text-split'
@@ -40,7 +40,9 @@ const options = {
 const created = splitter(target, options)
 ```
 
-The options in detail:
+Read more about the [options](#options) below.
+
+## Options
 
 * [a11y](#a11y)
 * [delimeter](#delimeter)
@@ -76,7 +78,11 @@ This is the ~~fun part~~ escape hatch.
 ```javascript
 splitter(target, {
   each: (node, index, frag) => {
+    // add a class based on the index
     node.classList.add(`number-${index}`)
+
+    // add a transition delay based on the index
+    node.style.transitionDelay = `${index * .05}s`
   }
 })
 ```
