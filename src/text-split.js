@@ -33,8 +33,10 @@ const split = (target, {
   for (index = 0; index < len; index++) {
     node = document.createElement(element)
     node.textContent = text[index]
-    a11y && node.setAttribute('aria-hidden', 'true')
-    each && each(node, index)
+
+    if (a11y) node.setAttribute('aria-hidden', 'true')
+    if (each) each(node, index)
+
     frag.appendChild(node)
   }
 
