@@ -28,7 +28,10 @@
   },
 
   "keywords": [
-
+    "text",
+    "type",
+    "split",
+    "wrap"
   ],
 
   "devDependencies": {
