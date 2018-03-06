@@ -65,7 +65,7 @@ splitter(target, { delimeter: 'word' })
 
 ### each
 
-A function, if it exists, that is called and passed:
+A function that, if it exists, is called and passed:
 
 * the created node, with set `textContent`
 * the 0-based node index (relative to other created nodes)
