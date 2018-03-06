@@ -29,4 +29,19 @@ describe('text-split', () => {
 
     expect(test.outerHTML).to.equal(expected)
   })
+
+  it('should split by word', () => {
+    const test = document.createElement('p')
+    test.textContent = 'Split text.'
+    split(test, { delimeter: 'word' })
+
+    const expected = [
+      '<p aria-label="Split text.">',
+      '<span aria-hidden="true">Split</span>',
+      '<span aria-hidden="true">text.</span>',
+      '</p>'
+    ].join('')
+
+    expect(test.outerHTML).to.equal(expected)
+  })
 })
