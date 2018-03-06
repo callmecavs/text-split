@@ -27,22 +27,26 @@ import splitter from 'text-split'
 // a target node is required
 const target = document.querySelector('.heading')
 
-// all options have defaults (shown below)
-const options = {
+// pass in the target node, get back the newly created nodes wrapping the target text (in an array)
+const created = splitter(target)
+```
+
+Read more about [options](#options) below to handle more complex use cases.
+
+## Options
+
+All options have defaults, as shown here:
+
+```javascript
+const defaults = {
   a11y = true,
   delimeter = 'letter',
   each = null,
   element = 'span'
 }
-
-// pass the target node and options object to imported function
-// the function returns all created child elements, in an array
-const created = splitter(target, options)
 ```
 
-Read more about the [options](#options) below.
-
-## Options
+Each option is explained in further detail below:
 
 * [a11y](#a11y)
 * [delimeter](#delimeter)
