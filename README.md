@@ -29,7 +29,8 @@ import splitter from 'text-split'
 // a target node is required
 const target = document.querySelector('.heading')
 
-// pass in the target node, get back the newly created nodes wrapping the target text (in an array)
+// pass in the target node
+// get back the newly created nodes wrapping the target text (in an array)
 const created = splitter(target)
 ```
 
@@ -75,8 +76,8 @@ splitter(target, { delimeter: 'word' })
 
 A function that, if it exists, is called and passed:
 
-* the created node, with set `textContent`
-* the 0-based node index (relative to other created nodes)
+* the created node, with appropriate `textContent`
+* the 0-based node index (relative to the other created nodes)
 * the [DocumentFragment](https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment) that stores the nodes created (thus far)
 
 This is the ~~fun part~~ escape hatch.
