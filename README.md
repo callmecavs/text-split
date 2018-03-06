@@ -15,7 +15,9 @@ $ npm install text-split --save
 To address some prior art:
 
 * [Lettering.js](https://github.com/davatron5000/Lettering.js) - dependent on jQuery
-* [charming](https://github.com/yuanqing/charming) - less straightforward (child nodes are recursed through for text content), less flexible (mandatory `class` and `aria` attributes are added)
+* [charming](https://github.com/yuanqing/charming)
+  * less straightforward (child nodes are recursed through for text content)
+  * less flexible (mandatory `class` and `aria` attributes are added, no per piece callback)
 
 With only 1 method and 4 options, `text-split` offers the most control via the smallest API surface area.
 
