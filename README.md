@@ -27,7 +27,7 @@ import splitter from 'text-split'
 // a target node is required
 const target = document.querySelector('.heading')
 
-// all options have defaults (shown here)
+// all options have defaults (shown below)
 const options = {
   a11y = true,
   delimeter = 'letter',
@@ -35,9 +35,40 @@ const options = {
   element = 'span'
 }
 
-// pass the target and the options object
-// function returns the created elements as an array
+// pass the target node and options object to imported function
+// the function returns all created child elements, in an array
 const created = splitter(target, options)
+```
+
+The options in detail:
+
+* [a11y](#a11y)
+* [delimeter](#delimeter)
+* [each](#each)
+* [element](#element)
+
+### a11y
+
+```javascript
+
+```
+
+### delimeter
+
+```javascript
+
+```
+
+### each
+
+```javascript
+
+```
+
+### element
+
+```javascript
+
 ```
 
 ## License
