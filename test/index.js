@@ -6,7 +6,31 @@ const split = require('../dist/text-split.js')
 /* eslint-env mocha */
 
 describe('text-split', () => {
-  it('split by letter', () => {
+  it('"a11y" option', () => {
+    const test = document.createElement('p')
+    test.textContent = 'Split text.'
+    split(test, { a11y: false })
+
+    const expected = [
+      '<p>',
+      '<span>S</span>',
+      '<span>p</span>',
+      '<span>l</span>',
+      '<span>i</span>',
+      '<span>t</span>',
+      '<span> </span>',
+      '<span>t</span>',
+      '<span>e</span>',
+      '<span>x</span>',
+      '<span>t</span>',
+      '<span>.</span>',
+      '</p>'
+    ].join('')
+
+    expect(test.outerHTML).to.equal(expected)
+  })
+
+  it('"delimeter:letter" option', () => {
     const test = document.createElement('p')
     test.textContent = 'Split text.'
     split(test)
@@ -30,7 +54,7 @@ describe('text-split', () => {
     expect(test.outerHTML).to.equal(expected)
   })
 
-  it('split by word', () => {
+  it('"delimeter:word" option', () => {
     const test = document.createElement('p')
     test.textContent = 'Split text.'
     split(test, { delimeter: 'word' })
@@ -39,30 +63,6 @@ describe('text-split', () => {
       '<p aria-label="Split text.">',
       '<span aria-hidden="true">Split</span>',
       '<span aria-hidden="true">text.</span>',
-      '</p>'
-    ].join('')
-
-    expect(test.outerHTML).to.equal(expected)
-  })
-
-  it('"a11y" option', () => {
-    const test = document.createElement('p')
-    test.textContent = 'Split text.'
-    split(test, { a11y: false })
-
-    const expected = [
-      '<p>',
-      '<span>S</span>',
-      '<span>p</span>',
-      '<span>l</span>',
-      '<span>i</span>',
-      '<span>t</span>',
-      '<span> </span>',
-      '<span>t</span>',
-      '<span>e</span>',
-      '<span>x</span>',
-      '<span>t</span>',
-      '<span>.</span>',
       '</p>'
     ].join('')
 
