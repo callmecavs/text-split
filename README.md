@@ -57,8 +57,10 @@ splitter(target, { a11y: false })
 
 ### delimeter
 
-```javascript
+Either `letter` (default) or `word`, indicating how to break up the target text before wrapping it.
 
+```javascript
+splitter(target, { delimeter: 'word' })
 ```
 
 ### each
