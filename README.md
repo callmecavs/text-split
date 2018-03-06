@@ -15,7 +15,20 @@ $ npm install text-split --save
 ```javascript
 import splitter from 'text-split'
 
+// a target node is required
+const target = document.querySelector('.heading')
 
+// all options have defaults (shown here)
+const options = {
+  a11y = true,
+  delimeter = 'letter',
+  each = null,
+  element = 'span'
+}
+
+// pass the target and the options object
+// function returns the created elements as an array
+const created = splitter(target, options)
 ```
 
 ## License
