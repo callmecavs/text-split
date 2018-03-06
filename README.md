@@ -49,8 +49,10 @@ The options in detail:
 
 ### a11y
 
-```javascript
+Enable (default) or disable setting of `aria` attributes on parent and created child nodes.
 
+```javascript
+splitter(target, { a11y: false })
 ```
 
 ### delimeter
