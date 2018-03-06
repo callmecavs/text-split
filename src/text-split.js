@@ -11,7 +11,9 @@ const split = (node, {
   each = () => {}
 } = {}) => {
   // split text based on delimeter
-  const text = node.textContent.split(separators[delimeter])
+  const text = node
+    .textContent
+    .split(separators[delimeter])
 
   console.log(text)
 }
