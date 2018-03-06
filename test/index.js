@@ -6,7 +6,7 @@ const split = require('../dist/text-split.js')
 /* eslint-env mocha */
 
 describe('text-split', () => {
-  it('should split by letter', () => {
+  it('split by letter', () => {
     const test = document.createElement('p')
     test.textContent = 'Split text.'
     split(test)
@@ -30,7 +30,7 @@ describe('text-split', () => {
     expect(test.outerHTML).to.equal(expected)
   })
 
-  it('should split by word', () => {
+  it('split by word', () => {
     const test = document.createElement('p')
     test.textContent = 'Split text.'
     split(test, { delimeter: 'word' })
@@ -40,6 +40,21 @@ describe('text-split', () => {
       '<span aria-hidden="true">Split</span>',
       '<span aria-hidden="true">text.</span>',
       '</p>'
+    ].join('')
+
+    expect(test.outerHTML).to.equal(expected)
+  })
+
+  it('"element" option', () => {
+    const test = document.createElement('div')
+    test.textContent = 'Split text.'
+    split(test, { delimeter: 'word', element: 'div' })
+
+    const expected = [
+      '<div aria-label="Split text.">',
+      '<div aria-hidden="true">Split</div>',
+      '<div aria-hidden="true">text.</div>',
+      '</div>'
     ].join('')
 
     expect(test.outerHTML).to.equal(expected)
