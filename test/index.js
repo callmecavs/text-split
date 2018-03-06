@@ -69,6 +69,30 @@ describe('text-split', () => {
     expect(test.outerHTML).to.equal(expected)
   })
 
+  it('"each" option', () => {
+    const test = document.createElement('p')
+    test.textContent = 'Split text.'
+    split(test, { a11y: false, each: (node, index) => node.classList.add('test', `test-${index}`) })
+
+    const expected = [
+      '<p>',
+      '<span class="test test-0">S</span>',
+      '<span class="test test-1">p</span>',
+      '<span class="test test-2">l</span>',
+      '<span class="test test-3">i</span>',
+      '<span class="test test-4">t</span>',
+      '<span class="test test-5"> </span>',
+      '<span class="test test-6">t</span>',
+      '<span class="test test-7">e</span>',
+      '<span class="test test-8">x</span>',
+      '<span class="test test-9">t</span>',
+      '<span class="test test-10">.</span>',
+      '</p>'
+    ].join('')
+
+    expect(test.outerHTML).to.equal(expected)
+  })
+
   it('"element" option', () => {
     const test = document.createElement('div')
     test.textContent = 'Split text.'
