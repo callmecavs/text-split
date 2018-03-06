@@ -17,6 +17,9 @@ const split = (target, {
     throw new Error('text-split: target must have text content, and no children.')
   }
 
+  // cache for created nodes
+  const created = []
+
   // split text based on delimeter
   const text = target
     .textContent
@@ -37,6 +40,7 @@ const split = (target, {
     if (a11y) node.setAttribute('aria-hidden', 'true')
     if (each) each(node, index)
 
+    created.push(node)
     frag.appendChild(node)
   }
 
@@ -47,6 +51,9 @@ const split = (target, {
   // clear text, and append fragment
   target.innerHTML = ''
   target.appendChild(frag)
+
+  // return created nodes, as an array, for convenience's sake
+  return created
 }
 
 export default split
