@@ -12,6 +12,7 @@ describe('text-split', () => {
     split(test)
 
     const expected = [
+      '<p aria-label="Split text.">',
       '<span aria-hidden="true">S</span>',
       '<span aria-hidden="true">p</span>',
       '<span aria-hidden="true">l</span>',
@@ -22,9 +23,10 @@ describe('text-split', () => {
       '<span aria-hidden="true">e</span>',
       '<span aria-hidden="true">x</span>',
       '<span aria-hidden="true">t</span>',
-      '<span aria-hidden="true">.</span>'
+      '<span aria-hidden="true">.</span>',
+      '</p>'
     ].join('')
 
-    expect(test.innerHTML).to.equal(expected)
+    expect(test.outerHTML).to.equal(expected)
   })
 })
